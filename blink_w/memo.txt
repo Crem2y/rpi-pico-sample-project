@@ -1,0 +1,3 @@
+
+https://lindevs.com/set-up-raspberry-pi-pico-sdk-on-ubuntu
+
