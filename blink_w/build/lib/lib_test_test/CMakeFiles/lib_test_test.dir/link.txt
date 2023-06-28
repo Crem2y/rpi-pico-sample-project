@@ -1,2 +1,0 @@
-/usr/bin/arm-none-eabi-ar qc liblib_test_test.a CMakeFiles/lib_test_test.dir/lib_test_test.cpp.obj
-/usr/bin/arm-none-eabi-ranlib liblib_test_test.a

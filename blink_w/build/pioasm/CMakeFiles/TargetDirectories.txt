@@ -1,3 +1,0 @@
-/home/ubuntu/Coding/rpi_pico/blink_w/build/pioasm/CMakeFiles/pioasm.dir
-/home/ubuntu/Coding/rpi_pico/blink_w/build/pioasm/CMakeFiles/edit_cache.dir
-/home/ubuntu/Coding/rpi_pico/blink_w/build/pioasm/CMakeFiles/rebuild_cache.dir
