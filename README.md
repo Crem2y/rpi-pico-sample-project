@@ -13,6 +13,6 @@ lib 디렉토리 내의 lib_test 복사해 원하는 라이브러리 이름으�
 
 pico_build.sh 사용 시 (프로젝트 폴더 이름).uf2 로 바이너리 생성
 
-pico_upload.sh 사용 시 helloworld.uf2 업로드 (하드코딩이라 바꿔야 함)
+pico_upload.sh 사용 시 (프로젝트 폴더 이름).uf2 업로드
 
 pico_clean.sh 사용 시 build 폴더 삭제
