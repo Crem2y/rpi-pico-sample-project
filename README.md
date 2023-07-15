@@ -1,11 +1,13 @@
 # rpi-pico-sample-project
 
 라즈베리파이 피코 W 보드 사용을 위한 간단한 샘플 프로젝트
-PIO 기능은 CMakeLists.txt를 좀 변경해야 해서 추가해둠
+
+스크립트는 우분투에서만 테스트 해봄
 
 ## 환경 세팅하기
 
 pico-sdk 설치법 ([https://lindevs.com/set-up-raspberry-pi-pico-sdk-on-ubuntu](https://lindevs.com/set-up-raspberry-pi-pico-sdk-on-ubuntu))
+
 gcc-arm-none-eabi는 설치가 잘 안돼서, 좀 다르게 설치해야 함 ([https://unix.stackexchange.com/questions/377345/installing-arm-none-eabi-gcc](https://unix.stackexchange.com/questions/377345/installing-arm-none-eabi-gcc))
 <br>
 ```
@@ -17,11 +19,14 @@ echo 'export PICO_SDK_PATH=/opt/pico-sdk' | sudo tee -a /etc/profile.d/pico-sdk.
 source /etc/profile.d/pico-sdk.sh
 ```
 
+물론 이 리포지토리 클론하려면 gh도 설치하고 로그인도 해둬야 하지
+
 ## 샘플 프로젝트들
 
 ### helloworld
 
 코드 자체는 별거 없지만 라이브러리를 추가하기 위한 구조를 넣어둔 프로젝트
+
 이 프로젝트 외에는 라이브러리를 다 없애고 폴더만 남겨뒀으므로 헤더 한두개만 사용할거면 그걸 베이스로 사용하면 좋음
 
 ### blink\_w
@@ -39,9 +44,11 @@ lib 디렉토리 내의 lib\_test 복사해 원하는 라이브러리 이름으�
 디렉토리 내의 \*.hpp, \*.cpp 파일의 이름을 설정했던 라이브러리 이름으로 변경해 사용
 
 그리고 lib 디렉토리에서 CMakeLists.txt 수정해 라이브러리 추가해야 함
+
 (전부 추가하는 방법이 있을 거 같은데 아직 모르겠음)
 
 그리고 라이브러리 내의 라이브러리를 사용하는 경우는 아직 안만들어둠
+
 이건 추후 추가해야지
 
 ## 스크립트 사용
@@ -54,6 +61,7 @@ lib 디렉토리 내의 lib\_test 복사해 원하는 라이브러리 이름으�
 
 (프로젝트 폴더 이름).uf2 를 RPI-RP2에 업로드
 정확히는 `/media/(user)/RPI-RP2`에 이동시킴
+
 따라서, 어떤 이유로 디렉토리가 달라지면 실패함. 되도록이면 그냥 직접 이동시킬것
 
 ### pico\_clean.sh
