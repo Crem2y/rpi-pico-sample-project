@@ -2,6 +2,8 @@
 
 라즈베리파이 피코 W 보드 사용을 위한 간단한 샘플 프로젝트
 
+코드의 일부는 [raspberrypi/pico-examples](https://github.com/raspberrypi/pico-examples)에서 가져옴
+
 스크립트는 우분투에서만 테스트 해봄
 
 ## 환경 세팅하기
@@ -36,7 +38,7 @@ pico w 보드는 빌트인 led가 rp2040이 아니라 무선 모듈에 달려있
 ### pio\_test
 
 PIO 기능은 .pio를 변환하는 것 때문에 CMakeLists.txt를 몇 줄 변경해야 해서 추가해둠
-<br>
+
 ## 라이브러리 추가
 
 lib 디렉토리 내의 lib\_test 복사해 원하는 라이브러리 이름으로 바꾸고,
