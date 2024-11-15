@@ -1,6 +1,6 @@
 # rpi-pico-sample-project
 
-라즈베리파이 피코 W 보드 사용을 위한 간단한 샘플 프로젝트
+라즈베리파이 피코 (2 & W) 보드 사용을 위한 간단한 샘플 프로젝트
 
 코드의 일부는 [raspberrypi/pico-examples](https://github.com/raspberrypi/pico-examples)에서 가져옴
 
@@ -21,8 +21,6 @@ echo 'export PICO_SDK_PATH=/opt/pico-sdk' | sudo tee -a /etc/profile.d/pico-sdk.
 source /etc/profile.d/pico-sdk.sh
 ```
 
-물론 이 리포지토리 클론하려면 gh도 설치하고 로그인도 해둬야 하지
-
 ## 샘플 프로젝트들
 
 ### helloworld
@@ -34,6 +32,10 @@ source /etc/profile.d/pico-sdk.sh
 ### blink\_w
 
 pico w 보드는 빌트인 led가 rp2040이 아니라 무선 모듈에 달려있어서 만들어둔 프로젝트
+
+### blink\_rp2350
+
+rp2350용 프로젝트. 나중에는 그냥 옵션에 따라 둘 다 빌드할 수 있게 해도 괜찮을 듯
 
 ### pio\_test
 
