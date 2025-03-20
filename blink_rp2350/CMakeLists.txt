@@ -1,14 +1,15 @@
-# for pico W board
-#set(PICO_BOARD pico_w)
-#set(PICO_CYW43_SUPPORTED 1)
+# for Pico 2
+#set(PICO_BOARD pico2)
+#set(PICO_PLATFORM rp2350-arm-s)
 
-# for rp2350
-set(PICO_BOARD pico2)
+# for Pico 2 W
+set(PICO_BOARD pico2_w)
 set(PICO_PLATFORM rp2350-arm-s)
+set(PICO_CYW43_SUPPORTED 1) 
 
 cmake_minimum_required(VERSION 3.13)
 
-include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
+include(pico_sdk_import.cmake)
 
 get_filename_component(PROJ_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 
@@ -43,7 +44,7 @@ pico_add_extra_outputs(${PROJECT_NAME})
 
 target_link_libraries(${PROJECT_NAME}
   pico_stdlib
-#  pico_cyw43_arch_none # for pico W board
+  pico_cyw43_arch_none # for Pico W series
 )
 
 pico_enable_stdio_usb(${PROJECT_NAME} 1)
