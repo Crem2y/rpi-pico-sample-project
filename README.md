@@ -2,15 +2,15 @@
 
 라즈베리파이 피코 (2 & W) 보드 사용을 위한 간단한 샘플 프로젝트
 
-코드의 일부는 [raspberrypi/pico-examples](https://github.com/raspberrypi/pico-examples)에서 가져옴
+코드의 일부는 [raspberrypi/pico-examples](https://github.com/raspberrypi/pico-examples)에서 가져왔습니다.
 
-스크립트는 우분투에서만 테스트 해봄
+스크립트는 우분투에서만 테스트 해봤습니다.
 
 ## 환경 세팅하기
 
 pico-sdk 설치법 ([https://lindevs.com/set-up-raspberry-pi-pico-sdk-on-ubuntu](https://lindevs.com/set-up-raspberry-pi-pico-sdk-on-ubuntu))
 
-gcc-arm-none-eabi는 설치가 잘 안돼서, 좀 다르게 설치해야 함 ([https://unix.stackexchange.com/questions/377345/installing-arm-none-eabi-gcc](https://unix.stackexchange.com/questions/377345/installing-arm-none-eabi-gcc))
+gcc-arm-none-eabi는 설치가 잘 안돼서, 좀 다르게 설치했습니다. ([https://unix.stackexchange.com/questions/377345/installing-arm-none-eabi-gcc](https://unix.stackexchange.com/questions/377345/installing-arm-none-eabi-gcc))
 <br>
 ```
 sudo apt update
@@ -25,45 +25,47 @@ source /etc/profile.d/pico-sdk.sh
 
 ### helloworld
 
-코드 자체는 별거 없지만 라이브러리를 추가하기 위한 구조를 넣어둔 프로젝트
+라이브러리를 추가하기 위한 구조를 넣어둔 프로젝트입니다.
 
-이 프로젝트 외에는 라이브러리를 다 없애고 폴더만 남겨뒀으므로 헤더 한두개만 사용할거면 그걸 베이스로 사용하면 좋음
+이 프로젝트 외에는 라이브러리 없이 폴더만 남겨뒀으므로 간단한 프로젝트에 사용한다면 그걸 베이스로 사용하면 좋습니다.
 
 ### blink\_w
 
-pico w 보드는 빌트인 led가 rp2040이 아니라 무선 모듈에 달려있어서 만들어둔 프로젝트
+pico w 보드의 빌트인 led가 rp2040이 아니라 무선 모듈에 달려있어서 별도로 만들어둔 프로젝트입니다.
 
 ### blink\_rp2350
 
-rp2350용 프로젝트. 나중에는 그냥 옵션에 따라 둘 다 빌드할 수 있게 해도 괜찮을 듯
+rp2350용 프로젝트입니다. 추후 옵션에 따라 둘 다 빌드할 수 있게 하는 것도 좋아보입니다.
 
 ### pio\_test
 
-PIO 기능은 .pio를 변환하는 것 때문에 CMakeLists.txt를 몇 줄 변경해야 해서 추가해둠
+PIO 기능은 .pio의 어셈블 과정이 필요해 CMakeLists.txt를 몇 줄 변경해야 해서 추가했습니다.
 
 ## 라이브러리 추가
 
-lib 디렉토리 내의 lib\_test 복사해 원하는 라이브러리 이름으로 바꾸고,
+lib 디렉토리 내의 lib\_test를 복사해 원하는 라이브러리 이름으로 바꾸고,
 
-디렉토리 내의 \*.hpp, \*.cpp 파일의 이름을 설정했던 라이브러리 이름으로 변경해 사용
+디렉토리 내의 \*.hpp, \*.cpp 파일의 이름을 설정했던 라이브러리 이름으로 변경해 사용하면 됩니다.
 
-그리고 lib 디렉토리에서 CMakeLists.txt 수정해 라이브러리 추가해야 함
+그리고 lib 디렉토리에서 CMakeLists.txt를 수정해 라이브러리를 별도로 추가해야 합니다.
 
-(전부 추가하는 방법이 있을 거 같은데 아직 모르겠음)
+(폴더 내에서 전부 추가하는 방법이 있을 거 같은데 아직은 잘 모르겠습니다.)
 
 ## 스크립트 사용
 
+빌드의 경우 환경변수 설정이 포함되어있어 root 권한이 필요합니다. (수정예정)
+
 ### pico\_build.sh
 
-(프로젝트 폴더 이름).uf2 로 바이너리 생성
+(프로젝트 폴더 이름).uf2 로 플래시용 바이너리를 생성합니다.
 
 ### pico\_upload.sh
 
-(프로젝트 폴더 이름).uf2 를 RPI-RP2에 업로드
-정확히는 `/media/(user)/RPI-RP2`에 이동시킴
+(프로젝트 폴더 이름).uf2 를 RPI-RP2에 업로드합니다.
+정확히는 `/media/(user)/RPI-RP2`에 이동시킵니다.
 
-따라서, 어떤 이유로 디렉토리가 달라지면 실패함. 되도록이면 그냥 직접 이동시킬것
+따라서, 디렉토리 경로나 이름이 달라지면 실패합니다.
 
 ### pico\_clean.sh
 
-프로젝트 폴더 내의 build 폴더 삭제
+프로젝트 폴더 내의 build 폴더를 삭제합니다.
